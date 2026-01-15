@@ -65,6 +65,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
-
-///Inshaallah this is gonna be a great project
