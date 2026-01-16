@@ -1,13 +1,10 @@
+
+
 import 'package:bloc/bloc.dart';
-import 'package:meta/meta.dart';
+import 'package:bloc_app/bloc/counter/counter_event.dart';
+import 'package:bloc_app/bloc/counter/counter_state.dart';
 
-part 'counter_event.dart';
-part 'counter_state.dart';
+class CounterBloc extends Bloc<CounterEvent, CounterState>{
+  CounterBloc(super.initialState);
 
-class CounterBloc extends Bloc<CounterEvent, CounterState> {
-  CounterBloc() : super(CounterInitial()) {
-    on<CounterEvent>((event, emit) {
-      // TODO: implement event handler
-    });
-  }
 }
