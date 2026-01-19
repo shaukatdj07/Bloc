@@ -3,17 +3,17 @@
 import 'package:equatable/equatable.dart';
 
 class CounterState extends Equatable{
-  final int count;
+  final int counter;
 
  const CounterState({
-   this.count = 0,
+   this.counter = 0,
 });
 
   CounterState copyWith ({int? count}){
-    return CounterState(count: count ?? this.count);
+    return CounterState(counter: count ?? counter);
 }
 
   @override
-  List<Object?> get props =>[count];
+  List<Object?> get props =>[counter];
 
 }

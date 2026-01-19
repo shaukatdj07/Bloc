@@ -24,13 +24,13 @@ class _CounterScreenState extends State<CounterScreen> {
           BlocBuilder<CounterBloc, CounterState>(
             builder: (context, event) {
               return Text(
-                event.count.toString(),
+                event.counter.toString(),
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
-                  color: event.count < 0
+                  color: event.counter < 0
                       ? Colors.red
-                      : event.count == 0
+                      : event.counter == 0
                       ? Colors.blueGrey
                       : Colors.green,
                 ),
