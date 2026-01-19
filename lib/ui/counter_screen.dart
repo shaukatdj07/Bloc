@@ -13,7 +13,6 @@ class CounterScreen extends StatefulWidget {
 }
 
 class _CounterScreenState extends State<CounterScreen> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,16 +22,17 @@ class _CounterScreenState extends State<CounterScreen> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           BlocBuilder<CounterBloc, CounterState>(
-
             builder: (context, event) {
               return Text(
                 event.count.toString(),
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
-                  color: event.count < 0 ? Colors.red :
-                      event.count == 0 ? Colors.black :
-                          Colors.green
+                  color: event.count < 0
+                      ? Colors.red
+                      : event.count == 0
+                      ? Colors.blueGrey
+                      : Colors.green,
                 ),
               );
             },
@@ -42,17 +42,23 @@ class _CounterScreenState extends State<CounterScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              ElevatedButton(onPressed: () {
-                context.read<CounterBloc>().add(IncrementCounter());
-              }, child: Icon(Icons.add)),
-              const SizedBox(width: 20),
-              ElevatedButton(onPressed: () {
-                context.read<CounterBloc>().add(ResetCounter());
-              }, child: Icon(Icons.refresh)),
+              ElevatedButton(
+                onPressed: () {
+                  context.read<CounterBloc>().add(IncrementCounter());
+                },
+                child: Icon(Icons.add),
+              ),
               const SizedBox(width: 20),
               ElevatedButton(
                 onPressed: () {
-                  context.read<CounterBloc>().add(DecrementCounter() );
+                  context.read<CounterBloc>().add(ResetCounter());
+                },
+                child: Icon(Icons.refresh),
+              ),
+              const SizedBox(width: 20),
+              ElevatedButton(
+                onPressed: () {
+                  context.read<CounterBloc>().add(DecrementCounter());
                 },
                 child: Icon(CupertinoIcons.minus),
               ),
