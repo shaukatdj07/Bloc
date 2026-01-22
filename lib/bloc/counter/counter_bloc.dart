@@ -10,14 +10,14 @@ import 'package:bloc_app/bloc/counter/counter_state.dart';
   }
   
   
-  void _addEvent(IncrementEvent event, Emitter<CounterState> states){
+  void _addEvent(IncrementEvent event, Emitter<CounterState> emit){
     emit(state.copyWith(count: state.count+1));
   }
-  void _resetCounter(ResetCounter event, Emitter<CounterState> states){
+  void _resetCounter(ResetCounter event, Emitter<CounterState> emit){
     emit(state.copyWith(count:0));
   }
 
-  void _decrementCounter(DecrementCounter event, Emitter<CounterState> states){
+  void _decrementCounter(DecrementCounter event, Emitter<CounterState> emit){
     emit(state.copyWith(count: state.count-1));
   }
 
