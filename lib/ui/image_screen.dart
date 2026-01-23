@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:bloc_app/bloc/image_picker/image_picker_bloc.dart';
 import 'package:bloc_app/bloc/image_picker/image_picker_event.dart';
 import 'package:bloc_app/bloc/image_picker/image_picker_state.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -23,9 +24,9 @@ class _ImageScreenState extends State<ImageScreen> {
             return state.file == null
                 ? InkWell(
                 onTap: (){
-                 context.read<ImagePickerBloc>().add(CameraCapture());
+                 context.read<ImagePickerBloc>().add(GalleryImagePicker());
                 },
-                child: CircleAvatar(child: Icon(Icons.camera_alt)))
+                child: CircleAvatar(child: Icon(CupertinoIcons.photo_fill_on_rectangle_fill)))
                 : Image.file(File(state.file!.path.toString()));
           },
         ),
