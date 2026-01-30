@@ -2,6 +2,7 @@ import 'package:bloc_app/bloc/counter/counter_bloc.dart';
 import 'package:bloc_app/bloc/image_picker/image_picker_bloc.dart';
 import 'package:bloc_app/bloc/switch/switch_bloc.dart';
 import 'package:bloc_app/bloc/todo/todo_bloc.dart';
+import 'package:bloc_app/ui/image_screen.dart';
 import 'package:bloc_app/ui/todo_screen.dart';
 import 'package:bloc_app/utils/image_picker_utils.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.dark,
           useMaterial3: true
         ),
-        home: const TodoScreen(),
+        home: const ImageScreen(),
       ),
     );
   }
